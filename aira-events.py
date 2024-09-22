@@ -5,6 +5,7 @@ import time
 import datetime
 ct = datetime.datetime.now()
 ts = ct.timestamp()
+timenow = ct.strftime("%H:%M:%S")
 
 # URL to Xano test API endpoing. Public
 
@@ -12,7 +13,7 @@ url = "https://x8ki-letl-twmt.n7.xano.io/api:8GpeBcyt/event"
 
 
 data = {
-        "camera_timestamp": ts,
+        "camera_timestamp": timenow,
         "hotel_id": 59,
         "camera_id": 59,
         "location_id": 12
