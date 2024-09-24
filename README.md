@@ -1,0 +1,1 @@
+Test Code to collect events via REST from Aira (camera events) and Situm (mobile phone accelerometer tracking)
