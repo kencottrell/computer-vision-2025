@@ -16,9 +16,9 @@ url = "https://x8ki-letl-twmt.n7.xano.io/api:8GpeBcyt/event"
 
 data = {
         "camera_timestamp": timenow,
-        "hotel_id": 59,
-        "camera_id": 59,
-        "location_id": 12
+        "hotel_id": 100,
+        "camera_id": 9,
+        "location_id": 125
     }
 
 data_json = json.dumps(data)
