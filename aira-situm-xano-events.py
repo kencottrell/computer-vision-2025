@@ -3,6 +3,8 @@ import requests
 import json
 import time
 import datetime
+import pprint
+
 ct = datetime.datetime.now()
 
 situmkey = 'e0c828ad924a10e7450d894d3a304db7d6dafa916f26c49c6cba698be80fc7b3'
@@ -31,5 +33,7 @@ print('Xano: ' + str(response))
 headers = {'Content-type': 'application/json', 
                      'X-API-KEY' :'e0c828ad924a10e7450d894d3a304db7d6dafa916f26c49c6cba698be80fc7b3' }
 response = requests.get(situm_url, headers=headers)
-payload = json.dumps(response.text, indent=6)
-print(response.text)
+print('Situm: ')
+pprint.pprint (response.text)
+#payload = json.dumps(response.json, indent=6)
+#print(payload)
