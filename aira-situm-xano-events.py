@@ -4,10 +4,12 @@ import json
 #import time
 import datetime
 import pprint
-
 ct = datetime.datetime.now()
 
-
+import importlib
+module = importlib.import_module('aira-events-tbd')
+print(module.testPayload)
+print("===========================")
 situmkey = 'e0c828ad924a10e7450d894d3a304db7d6dafa916f26c49c6cba698be80fc7b3'
 ts = ct.timestamp()
 timenow = ct.strftime("%H:%M:%S")
@@ -35,6 +37,7 @@ headers = {'Content-type': 'application/json',
                      'X-API-KEY' :'e0c828ad924a10e7450d894d3a304db7d6dafa916f26c49c6cba698be80fc7b3' }
 response = requests.get(situm_url, headers=headers)
 print('Situm: ')
+print('====================================')
 pprint.pprint (response.text)
 #payload = json.dumps(response.json, indent=6)
 #print(payload)
