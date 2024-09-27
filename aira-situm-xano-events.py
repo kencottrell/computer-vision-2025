@@ -19,14 +19,14 @@ timenow = ct.strftime("%H:%M:%S")
 xanourl = "https://x8ki-letl-twmt.n7.xano.io/api:8GpeBcyt/event"
 situm_url = 'https://dashboard.situm.com/api/v1/buildings'
 
-xanodata = {
+aira_event = {
         "camera_timestamp": timenow,
         "hotel_id": 100,
         "camera_id": 9,
         "location_id": 125
     }
 
-data_json = json.dumps(xanodata)
+data_json = json.dumps(aira_event)
 headers = {'Content-type': 'application/json'}
 
 response = requests.post(xanourl, data=data_json, headers=headers)
