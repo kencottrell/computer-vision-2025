@@ -42,9 +42,20 @@ body = {
 body_json = json.dumps(body)
 headers = {'Content-type': 'application/json' }
 response = requests.post(airaface_url_get_token, data=body_json, headers = headers, verify=False)
-print(response.text)
+if response.status_code == 200:
+    # Parse the JSON response
+    data = response.json()
 
-token = response.text
+    # Access the specific parameter
+    aira_token = data["token"]
+
+    # Print the parameter value
+    print("Token value: ")
+    print(aira_token)
+else:
+    # Handle errors
+    print("Error:", response.status_code)
+
 airaface_url_create_ev_handle = 'https://192.168.1.241:443/airafacelite/createeventhandle'
 
 airaface_url_get_ev_handles = 'https://192.168.1.241:443/airafacelite/findeventhandle'
