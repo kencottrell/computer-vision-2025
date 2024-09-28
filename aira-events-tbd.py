@@ -1,3 +1,38 @@
+true = True  # expected payload for AiraFace below
+false = False # expected spelling for AiraFace below 
+
+aira_create_event_payload = {
+  "action_type": "http",
+  "name": "Kens_Test_Event",
+  "enable": true,
+  "group_list": [
+    "All Person"
+  ],
+  "divice_groups":[
+    "cdc97c86-5f06-4504-914e-87172af202c5"
+  ],
+  "temperature_trigger_rule": 0,
+  "remarks": "This is a test from Kens VSCode python program",
+  "specify_time": {
+    "list": [
+      {
+        "start_time": 1704556800000,
+        "end_time": 1705075200000
+      }
+    ]
+  },
+  "weekly_schedule": {
+    "list": [
+      {
+        "day_of_week": 2,
+        "hours_list": [8, 9]
+      }
+    ]
+  },
+  "https": true, "method": "GET", "user": "username", "pass": "password",  "host": "192.168.2.3", "port": 80, "data_type": "JSON",  "language": "en",
+  "url": "/?aaa=##VerifiedTimeStamp##&bbb=##IsStranger##&", "custom_data": "", "note" : ""
+ }
+
 testPayload = {
     "uuid": "48508ca0-e2fb-4b07-8164-069287961b81",
     "name": "Test1",
