@@ -47,7 +47,7 @@ aira_create_event_payload = {
   "url": "/?aaa=##VerifiedTimeStamp##&bbb=##IsStranger##&", "custom_data": "", "note" : ""
  }
 
-aira_create_event_json = json.dumps(aira_event_payload)
+aira_create_event_json = json.dumps(aira_create_event_payload)
 
 module = importlib.import_module('aira-events-tbd')
  
