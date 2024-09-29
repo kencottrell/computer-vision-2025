@@ -17,6 +17,7 @@ ts = ct.timestamp()
 timenow = ct.strftime("%H:%M:%S")
 module = importlib.import_module('aira-events-tbd')
 
+debug = False
 
 
 aira_get_handle_payload = {
@@ -59,15 +60,31 @@ else:
 airaface_url_create_ev_handle = 'https://192.168.1.241:443/airafacelite/createeventhandle'
 
 airaface_url_get_ev_handles = 'https://192.168.1.241:443/airafacelite/findeventhandle'
-aira_token = '643d6a3d253d5e7b7276713d333d6f3d253d2e2d2c2b2a293d333d6b3d252e282d282a29292d2b292f2a28333d673d253d5e7b7276713d62'
+
 headers = {'Content-type': 'application/json', 
     'token': aira_token }
-response1 = requests.get(airaface_url_create_ev_handle, headers=headers, verify=False)
-print('Aira Event  Handle Create ===================')
-pprint.pprint (response1.text, indent=4)
+body = module.aira_create_event_payload  
+body_json = json.dumps(body)
+response1 = requests.get(airaface_url_create_ev_handle, data=body_json, headers=headers, verify=False)
+
+
+
+#with open('airaEventCreateHandle.json', 'w', encoding='utf-8') as f:
+#    datajson = json.loads(response1.text)
+#    json.dump(datajson, f, ensure_ascii=False, indent=4)
 
 response2 = requests.post(airaface_url_get_ev_handles, data=aira_get_ev_payload_json, headers=headers, verify=False)
-print('Aira Event  Handle List  ===================')
-pprint.pprint (response2.text, indent=4)
-#payload = json.dumps(response.text)
-#print(payload)
+
+
+with open('airaGetEventHandles.json', 'w', encoding='utf-8') as f:
+    datajson = json.loads(response2.text)
+    json.dump(datajson, f, ensure_ascii=False, indent=4)
+
+
+if debug:
+    print('Aira Event  Handle Create ===================')
+    pprint.pprint (response1.text, indent=4)
+    print('Aira Event  Handle List  ===================')
+    pprint.pprint (response2.text, indent=4)
+    #payload = json.dumps(response.text)
+    #print(payload)

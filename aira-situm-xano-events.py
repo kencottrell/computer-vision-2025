@@ -7,9 +7,13 @@ import datetime
 import pprint
 ct = datetime.datetime.now()
 
+debug = True
 module = importlib.import_module('aira-events-tbd')
-print(module.testPayload)
-print("===========================")
+if debug: 
+    print(module.testPayload)
+    print("===========================")
+
+
 situmkey = 'e0c828ad924a10e7450d894d3a304db7d6dafa916f26c49c6cba698be80fc7b3'
 ts = ct.timestamp()
 timenow = ct.strftime("%H:%M:%S")
@@ -33,11 +37,17 @@ response = requests.post(xanourl, data=aira_event_json, headers=headers)
 print(aira_event_json)
 print('Xano: ' + str(response))
 
+
 headers = {'Content-type': 'application/json', 
                      'X-API-KEY' :'e0c828ad924a10e7450d894d3a304db7d6dafa916f26c49c6cba698be80fc7b3' }
 response = requests.get(situm_url, headers=headers)
-print('Situm: ')
-print('====================================')
-pprint.pprint (response.text, indent=4)
+if debug:
+    print('Situm: ====================================')
+    pprint.pprint (response.text, indent=4)
+
+with open('allBuildings.json', 'w', encoding='utf-8') as f:
+    datajson = json.loads(response.text)
+    json.dump(datajson, f, ensure_ascii=False, indent=4)
+
 #payload = json.dumps(response.text)
 #print(payload)

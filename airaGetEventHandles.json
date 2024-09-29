@@ -1,0 +1,285 @@
+{
+    "message": "ok",
+    "total_length": 3,
+    "slice_shift": 0,
+    "slice_length": 10000,
+    "list": [
+        {
+            "uuid": "48508ca0-e2fb-4b07-8164-069287961b81",
+            "name": "Test1",
+            "action_type": "http",
+            "enable": true,
+            "group_list": [
+                "All Visitor"
+            ],
+            "divice_groups": [
+                "0"
+            ],
+            "temperature_trigger_rule": 0,
+            "remarks": "240925",
+            "specify_time": {
+                "list": []
+            },
+            "weekly_schedule": {
+                "list": []
+            },
+            "https": false,
+            "method": "POST",
+            "user": "Admin",
+            "pass": "123456",
+            "host": "127.0.0.1",
+            "port": 80,
+            "data_type": "JSON",
+            "url": "/",
+            "custom_data": "\"param1\":\"##VerifiedTimeStamp##\",\n\"param2\":\"##SourceDevice##\",",
+            "note": "",
+            "created_time": 1727285730497,
+            "updated_time": 1727285730497
+        },
+        {
+            "uuid": "5c6c0665-98a8-4207-8b93-09eab18dd56c",
+            "name": "testAllPerson",
+            "action_type": "http",
+            "enable": true,
+            "group_list": [
+                "All Person"
+            ],
+            "divice_groups": [
+                "0"
+            ],
+            "temperature_trigger_rule": 0,
+            "remarks": "All Persons ",
+            "specify_time": {
+                "list": []
+            },
+            "weekly_schedule": {
+                "list": []
+            },
+            "https": false,
+            "method": "POST",
+            "user": "Admin",
+            "pass": "123456",
+            "host": "127.0.0.1",
+            "port": 80,
+            "data_type": "JSON",
+            "url": "/allPerson?\"ts\":\"##VerifiedTimeStamp##\",\n\"videoSrc\":\"##SourceDevice##\",\n\"stranerBool\":\"##IsStranger##\",\n\"personID\":\"##PersonId##\",",
+            "custom_data": "\"ts\":\"##VerifiedTimeStamp##\",\n\"videoSrc\":\"##SourceDevice##\",\n\"stranerBool\":\"##IsStranger##\",\n\"personID\":\"##PersonId##\",",
+            "note": "",
+            "created_time": 1727292927371,
+            "updated_time": 1727292927371
+        },
+        {
+            "uuid": "47de8b66-c4c7-4609-9e2f-e86059f66b7c",
+            "name": "AllVisitorGrp",
+            "action_type": "http",
+            "enable": true,
+            "group_list": [
+                "All Visitor"
+            ],
+            "divice_groups": [
+                "0"
+            ],
+            "temperature_trigger_rule": 0,
+            "remarks": "All Visiotors",
+            "specify_time": {
+                "list": [
+                    {
+                        "start_time": 1727366400000,
+                        "end_time": 1730390400000
+                    }
+                ]
+            },
+            "weekly_schedule": {
+                "list": [
+                    {
+                        "day_of_week": 0,
+                        "hours_list": [
+                            0,
+                            1,
+                            2,
+                            3,
+                            4,
+                            5,
+                            6,
+                            7,
+                            8,
+                            9,
+                            10,
+                            11,
+                            12,
+                            13,
+                            14,
+                            15,
+                            16,
+                            17,
+                            18,
+                            19
+                        ]
+                    },
+                    {
+                        "day_of_week": 1,
+                        "hours_list": [
+                            0,
+                            1,
+                            2,
+                            3,
+                            4,
+                            5,
+                            6,
+                            7,
+                            8,
+                            9,
+                            10,
+                            11,
+                            12,
+                            13,
+                            14,
+                            15,
+                            16,
+                            17,
+                            18,
+                            19
+                        ]
+                    },
+                    {
+                        "day_of_week": 2,
+                        "hours_list": [
+                            0,
+                            1,
+                            2,
+                            3,
+                            4,
+                            5,
+                            6,
+                            7,
+                            8,
+                            9,
+                            10,
+                            11,
+                            12,
+                            13,
+                            14,
+                            15,
+                            16,
+                            17,
+                            18,
+                            19
+                        ]
+                    },
+                    {
+                        "day_of_week": 3,
+                        "hours_list": [
+                            0,
+                            1,
+                            2,
+                            3,
+                            4,
+                            5,
+                            6,
+                            7,
+                            8,
+                            9,
+                            10,
+                            11,
+                            12,
+                            13,
+                            14,
+                            15,
+                            16,
+                            17,
+                            18,
+                            19
+                        ]
+                    },
+                    {
+                        "day_of_week": 4,
+                        "hours_list": [
+                            0,
+                            1,
+                            2,
+                            3,
+                            4,
+                            5,
+                            6,
+                            7,
+                            8,
+                            9,
+                            10,
+                            11,
+                            12,
+                            13,
+                            14,
+                            15,
+                            16,
+                            17,
+                            18,
+                            19
+                        ]
+                    },
+                    {
+                        "day_of_week": 5,
+                        "hours_list": [
+                            0,
+                            1,
+                            2,
+                            3,
+                            4,
+                            5,
+                            6,
+                            7,
+                            8,
+                            9,
+                            10,
+                            11,
+                            12,
+                            13,
+                            14,
+                            15,
+                            16,
+                            17,
+                            18,
+                            19
+                        ]
+                    },
+                    {
+                        "day_of_week": 6,
+                        "hours_list": [
+                            0,
+                            1,
+                            2,
+                            3,
+                            4,
+                            5,
+                            6,
+                            7,
+                            8,
+                            9,
+                            10,
+                            11,
+                            12,
+                            13,
+                            14,
+                            15,
+                            16,
+                            17,
+                            18,
+                            19
+                        ]
+                    }
+                ]
+            },
+            "https": false,
+            "method": "POST",
+            "user": "Admin",
+            "pass": "123456",
+            "host": "127.0.0.1",
+            "port": 80,
+            "data_type": "JSON",
+            "url": "/",
+            "custom_data": "\"vts\":\"##VerifiedTimeStamp##\",\n\"vs\":\"##SourceDevice##\",\n\"strangerBool\":\"##IsStranger##\",\n\"group\":\"##Group##\",\n\"remarks\":\"##Remarks##\",",
+            "note": "",
+            "created_time": 1727293215716,
+            "updated_time": 1727293215716
+        }
+    ]
+}
