@@ -7,7 +7,7 @@ import datetime
 import pprint
 ct = datetime.datetime.now()
 
-debug = True
+debug = False
 module = importlib.import_module('aira-events-tbd')
 if debug: 
     print(module.testPayload)
