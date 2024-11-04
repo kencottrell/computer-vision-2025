@@ -11,14 +11,16 @@ print(cv2.__version__)
 
 # Read the video from specified path 
 # cam = cv2.VideoCapture("C:\\Users\\Admin\\PycharmProjects\\project_1\\openCV.mp4") 
-mp4samplefile = "C:\\Users\\kjcot\\mp4files\\aira-sample.mp4"
+inputdir =  "C:\\Users\\kjcot\\mp4files\\"
+outputdir = inputdir + "\\data\\"
+mp4samplefile = inputdir + 'aira-sample.mp4'
+
 cam = cv2.VideoCapture(mp4samplefile)
-print('reading sample file: ' + mp4samplefile)
 try: 
       
     # creating a folder named data 
-    if not os.path.exists("C:\\Users\\kjcot\\mp4files\\data"): 
-        os.makedirs("C:\\Users\\kjcot\\mp4files\\data") 
+    if not os.path.exists(outputdir): 
+        os.makedirs(outputdir) 
   
 # if not created then raise error 
 except OSError: 
@@ -27,6 +29,8 @@ except OSError:
 # frame 
 currentframe = 0
 i = 0  
+print('reading sample file: ' + mp4samplefile)
+
 while(i < 5): 
     i=i+1  
     # reading from frame 

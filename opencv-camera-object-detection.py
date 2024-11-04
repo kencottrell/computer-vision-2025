@@ -15,17 +15,22 @@ print('model name : ' + model.model_name)
 
 # Replace with your IP camera URL
 
-ip_camera_url = "rtsp://username:password@ip_address:port/stream_path"
+# ip_camera_url = "rtsp://username:password@ip_address:port/stream_path"
+# use mp4 without camera
 
- 
+inputdir =  "C:\\Users\\kjcot\\mp4files\\"
+outputdir = inputdir + "\\data\\"
+ip_camera_url = inputdir + 'aira-sample.mp4'    # instead of camera
+
+# cam = cv2.VideoCapture(mp4samplefile)
 
 # Open the IP camera stream
 
 cap = cv2.VideoCapture(ip_camera_url)
 
  
-
-while True:
+i = 0
+while i < 5:
 
     ret, frame = cap.read()
 
@@ -33,7 +38,7 @@ while True:
 
         break
 
- 
+    i = i + 1
 
     # Perform object detection
 
