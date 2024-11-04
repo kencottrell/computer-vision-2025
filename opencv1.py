@@ -11,7 +11,9 @@ print(cv2.__version__)
 
 # Read the video from specified path 
 # cam = cv2.VideoCapture("C:\\Users\\Admin\\PycharmProjects\\project_1\\openCV.mp4") 
-cam = cv2.VideoCapture("C:\\Users\\kjcot\\mp4files\\aira-sample.mp4")
+mp4samplefile = "C:\\Users\\kjcot\\mp4files\\aira-sample.mp4"
+cam = cv2.VideoCapture(mp4samplefile)
+print('reading sample file: ' + mp4samplefile)
 try: 
       
     # creating a folder named data 
