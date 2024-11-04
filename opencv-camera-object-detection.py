@@ -66,11 +66,16 @@ while i < 5:
 
             cv2.putText(frame, f"{model.names[class_id]} {conf:.2f}", (int(x1), int(y1) - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
 
- 
+            name = outputdir + 'box' + str(i) + '.jpg'
+            print ('Creating...' + name) 
+            cv2.imwrite(name, frame)
 
     # Display the frame
 
     cv2.imshow("IP Camera Object Detection", frame)
+     # writing the extracted images 
+   # cv2.imwrite(name, frame) 
+    
 
  
 
