@@ -2,10 +2,17 @@ import cv2
 from matplotlib import pyplot as plt
   
 input_photo =   'C:\\Users\\kjcot\\mp4files\\photos\\stop-sign.jpg'
+
+inputdir =  "C:\\Users\\kjcot\\mp4files\\photos\\"
+outputdir = inputdir + "\\data\\"
+inputname = 'guest-checkin'
+inputname = 'guest-checkin'
+input_photo = inputdir + inputname + '.jpg'
 # Opening image
 img = cv2.imread(input_photo)
   
 # OpenCV opens images as BRG 
+
 # but we want it as RGB and 
 # we also need a grayscale 
 # version

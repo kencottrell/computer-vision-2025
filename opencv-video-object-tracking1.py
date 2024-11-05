@@ -13,9 +13,13 @@ print('cv  version: ' + cv.__version__)
 # ip_camera_url = "rtsp://username:password@ip_address:port/stream_path"
 # here we use mp4 without camera
 
+# Read the video from specified path 
+# cam = cv2.VideoCapture("C:\\Users\\Admin\\PycharmProjects\\project_1\\openCV.mp4") 
 inputdir =  "C:\\Users\\kjcot\\mp4files\\"
 outputdir = inputdir + "\\data\\"
-ip_camera_url = inputdir + 'aira-sample.mp4'    # instead of camera
+inputname = 'guest-checkin'
+ip_camera_url = inputdir + inputname + '.mp4'
+ 
 
 
 

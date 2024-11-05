@@ -13,7 +13,8 @@ print(cv2.__version__)
 # cam = cv2.VideoCapture("C:\\Users\\Admin\\PycharmProjects\\project_1\\openCV.mp4") 
 inputdir =  "C:\\Users\\kjcot\\mp4files\\"
 outputdir = inputdir + "\\data\\"
-mp4samplefile = inputdir + 'aira-sample.mp4'
+inputname = 'guest-checkin'
+mp4samplefile = inputdir + inputname + '.mp4'
 
 cam = cv2.VideoCapture(mp4samplefile)
 try: 
@@ -38,7 +39,7 @@ while(i < 5):
   
     if ret: 
         # if video is still left continue creating images 
-        name = "C:\\Users\\kjcot\\mp4files\\data\\" + str(currentframe) + '.jpg'
+        name = "C:\\Users\\kjcot\\mp4files\\data\\" + inputname + str(currentframe) + '.jpg'
         print ('Creating...' + name) 
   
         # writing the extracted images 

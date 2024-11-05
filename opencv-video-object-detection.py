@@ -18,10 +18,13 @@ print('model name : ' + model.model_name)
 # ip_camera_url = "rtsp://username:password@ip_address:port/stream_path"
 # use mp4 without camera
 
+# Read the video from specified path 
+# cam = cv2.VideoCapture("C:\\Users\\Admin\\PycharmProjects\\project_1\\openCV.mp4") 
 inputdir =  "C:\\Users\\kjcot\\mp4files\\"
 outputdir = inputdir + "\\data\\"
-ip_camera_url = inputdir + 'aira-sample.mp4'    # instead of camera
-
+inputname = 'guest-checkin'
+ip_camera_url = inputdir + inputname + '.mp4'
+ 
 # cam = cv2.VideoCapture(mp4samplefile)
 
 # Open the IP camera stream
@@ -49,11 +52,11 @@ while i < 5:
     # Draw bounding boxes and labels on the frame
 
     for result in results:
-
+        j = 0
         boxes = result.boxes
 
         for box in boxes:
-
+            k = 0
             x1, y1, x2, y2 = box.xyxy[0].tolist()
 
             class_id = box.cls[0].item()
@@ -66,10 +69,11 @@ while i < 5:
 
             cv2.putText(frame, f"{model.names[class_id]} {conf:.2f}", (int(x1), int(y1) - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
 
-            name = outputdir + 'box' + str(i) + '.jpg'
+            name = outputdir + inputname +  '-fr' + str(i) + '-result' + str(j) + '-box' + str(k) +  '.jpg'
             print ('Creating...' + name) 
             cv2.imwrite(name, frame)
-
+            k = k+1
+        j = j + 1
     # Display the frame
 
     cv2.imshow("IP Camera Object Detection", frame)
