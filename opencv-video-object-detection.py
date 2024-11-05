@@ -21,7 +21,7 @@ print('model name : ' + model.model_name)
 # Read the video from specified path 
 # cam = cv2.VideoCapture("C:\\Users\\Admin\\PycharmProjects\\project_1\\openCV.mp4") 
 inputdir =  "C:\\Users\\kjcot\\mp4files\\"
-outputdir = inputdir + "\\data\\"
+outputdir = inputdir + "data\\"
 inputname = 'guest-checkin'
 ip_camera_url = inputdir + inputname + '.mp4'
  
@@ -69,7 +69,7 @@ while i < 5:
 
             cv2.putText(frame, f"{model.names[class_id]} {conf:.2f}", (int(x1), int(y1) - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
 
-            name = outputdir + inputname +  '-fr' + str(i) + '-result' + str(j) + '-box' + str(k) +  '.jpg'
+            name = outputdir + inputname +  '-fr' + str(i) + '-res' + str(j) + '-bx' + str(k) +  '.jpg'
             print ('Creating...' + name) 
             cv2.imwrite(name, frame)
             k = k+1
