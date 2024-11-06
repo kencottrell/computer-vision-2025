@@ -4,6 +4,14 @@ import cv2
 import numpy as np
 from ultralytics import YOLO
 
+import importlib
+#import time
+import datetime
+ct = datetime.datetime.now()
+
+debug = False
+module = importlib.import_module('aira-events-tbd')
+
 print('numpy version: ' + np.__version__)
 print('YOLO name: ' + YOLO.__name__)
 
@@ -20,10 +28,15 @@ print('model name : ' + model.model_name)
 
 # Read the video from specified path 
 # cam = cv2.VideoCapture("C:\\Users\\Admin\\PycharmProjects\\project_1\\openCV.mp4") 
-inputdir =  "C:\\Users\\kjcot\\mp4files\\"
-outputdir = inputdir + "data\\"
-inputname = 'guest-checkin'
-ip_camera_url = inputdir + inputname + '.mp4'
+
+module = importlib.import_module('video-input-settings')
+
+inputdir =  module.inputdir
+outputdir = module.outputdir
+inputname = module.inputname
+ip_camera_url = module.ip_camera_url
+
+
  
 # cam = cv2.VideoCapture(mp4samplefile)
 

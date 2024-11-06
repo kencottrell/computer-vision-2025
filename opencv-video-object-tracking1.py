@@ -1,5 +1,6 @@
 # powershell, for python CLI:  PS C:\Users\kjcot> pip install ultralytics
 # for vscode: # py -m pip install numpy opencv-python
+import importlib
 import cv2 as cv
 import numpy as np
 
@@ -15,10 +16,13 @@ print('cv  version: ' + cv.__version__)
 
 # Read the video from specified path 
 # cam = cv2.VideoCapture("C:\\Users\\Admin\\PycharmProjects\\project_1\\openCV.mp4") 
-inputdir =  "C:\\Users\\kjcot\\mp4files\\"
-outputdir = inputdir + "\\data\\"
-inputname = 'guest-checkin'
-ip_camera_url = inputdir + inputname + '.mp4'
+module = importlib.import_module('video-input-settings')
+
+inputdir =  module.inputdir
+outputdir = module.outputdir
+inputname = module.inputname
+ip_camera_url = module.ip_camera_url
+
  
 
 
