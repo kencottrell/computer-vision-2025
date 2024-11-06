@@ -70,19 +70,18 @@ while i < 5:
 
         for box in boxes:
             k = 0
+            
             x1, y1, x2, y2 = box.xyxy[0].tolist()
 
             class_id = box.cls[0].item()
 
             conf = box.conf[0].item()
 
- 
-
             cv2.rectangle(frame, (int(x1), int(y1)), (int(x2), int(y2)), (0, 255, 0), 2)
 
             cv2.putText(frame, f"{model.names[class_id]} {conf:.2f}", (int(x1), int(y1) - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
-
-            name = outputdir + inputname +  '-fr' + str(i) + '-res' + str(j) + '-bx' + str(k) +  '.jpg'
+            print("result / box index: " + str(j) + "/" + str(k))
+            name = outputdir + inputname +  '-fr' + str(i) +  '.jpg'
             print ('Creating...' + name) 
             cv2.imwrite(name, frame)
             k = k+1
