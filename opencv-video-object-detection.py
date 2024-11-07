@@ -67,7 +67,6 @@ while i < 5:
     for result in results:
         j = 0
         boxes = result.boxes
-
         for box in boxes:
             k = 0
             
