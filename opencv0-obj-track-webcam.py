@@ -1,7 +1,15 @@
 import cv2
+import importlib
 
 # Initialize video capture
-cap = cv2.VideoCapture(0)  # Replace "video.mp4" with 0 for webcam
+
+module = importlib.import_module('video-input-settings')
+
+inputdir =  module.inputdir
+outputdir = module.outputdir
+inputname = module.inputname
+ip_camera_url = module.ip_camera_url
+cap = cv2.VideoCapture(ip_camera_url)  # Replace "video.mp4" with 0 for webcam
 
 # Choose an object tracker
 tracker = cv2.TrackerCSRT_create('CSRT')  # Options: CSRT, KCF, BOOSTING, MIL, TLD, MEDIANFLOW, MOSSE, GOTURN
