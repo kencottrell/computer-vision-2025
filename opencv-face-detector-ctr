@@ -19,6 +19,8 @@ gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)  # Convert to grayscale
 faces = face_cascade.detectMultiScale(gray_image, scaleFactor=1.1, minNeighbors=5)
 #faces = face_cascade.detectMultiScale(image, scaleFactor=1.1, minNeighbors=5)
 
+num_faces = len(faces)
+print(f"Number of faces detected: {num_faces}")
 
 # Draw Rectangles Around Detected Objects: For each detected object, draw a rectangle around it.
 for (x, y, w, h) in faces:

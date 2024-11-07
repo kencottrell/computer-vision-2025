@@ -1,8 +1,0 @@
-To count the number of objects in an image using OpenCV, you can follow the detection steps and simply count the number of detected instances.
-
-
-Detect Objects: As shown previously with the Haar Cascade or any other detection method.
-Count: The length of the list of detections gives the count of objects.
-# Continuing from the face detection example
-num_faces = len(faces)
-print(f"Number of faces detected: {num_faces}")
