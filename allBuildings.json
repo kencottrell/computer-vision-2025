@@ -279,110 +279,114 @@
         "name": "OKCRN - Residence Inn (Marriott)",
         "address": "",
         "created_at": "2024-09-10T04:01:53.231+00:00",
-        "updated_at": "2024-09-10T04:27:14.352+00:00",
-        "calibration_model": null,
+        "updated_at": "2024-10-09T17:40:52.947+00:00",
+        "calibration_model": {
+            "id": 228765,
+            "updated_at": "2024-10-17T17:47:41.607+00:00",
+            "download": "/api/v1/model/17221/latest/file"
+        },
         "picture_url": null,
         "picture_thumb_url": null,
         "user_id": "67bc318b-5317-410d-aceb-cb00857663d2",
-        "rotation": 3.43,
+        "rotation": 3.44,
         "corners": [
             {
-                "lat": 35.241477782221,
-                "lng": -97.4772295445769
+                "lat": 35.2414450480197,
+                "lng": -97.4771975946877
             },
             {
-                "lat": 35.2417073816901,
-                "lng": -97.4781771060128
+                "lat": 35.2417040253229,
+                "lng": -97.4782284791366
             },
             {
-                "lat": 35.2420813169916,
-                "lng": -97.478041271987
+                "lat": 35.2421108422431,
+                "lng": -97.4780752648369
             },
             {
-                "lat": 35.2418517185812,
-                "lng": -97.4770937105511
+                "lat": 35.241851866239,
+                "lng": -97.477044380388
             }
         ],
         "location": {
-            "lat": 35.24177955039261,
-            "lng": -97.47763540820026
+            "lat": 35.24177794608156,
+            "lng": -97.47763642966174
         },
         "dimensions": {
-            "width": 89.86120429132454,
-            "length": 43.41966154253377
+            "width": 98.05889351446692,
+            "length": 47.38066890168053
         },
         "custom_fields": [],
         "info": "<br>",
         "floors": [
             {
-                "id": 56163,
+                "id": 57074,
                 "name": "1st",
                 "building_id": 17221,
                 "level": 0,
                 "level_height": 0.0,
                 "maps": {
-                    "map_id": "681a7c59-9afa-497e-9644-e97b3fdf02ec.png",
-                    "scale": 12.57494832070811,
-                    "map_url": "https://dashboard.situm.com/uploads/floor/56163/681a7c59-9afa-497e-9644-e97b3fdf02ec.png"
+                    "map_id": "397ea75e-f9b9-4b1b-82e6-93456b867995.png",
+                    "scale": 19.590267961942576,
+                    "map_url": "https://dashboard.situm.com/uploads/floor/57074/397ea75e-f9b9-4b1b-82e6-93456b867995.png"
                 },
                 "custom_fields": [],
-                "updated_at": "2024-09-10T04:08:34.746+00:00",
-                "created_at": "2024-09-10T04:08:34.746+00:00",
+                "updated_at": "2024-10-09T17:45:43.972+00:00",
+                "created_at": "2024-10-09T17:14:40.201+00:00",
                 "project_id": 17221
             },
             {
-                "id": 56164,
+                "id": 57075,
                 "name": "2nd",
                 "building_id": 17221,
                 "level": 1,
                 "level_height": 0.0,
                 "maps": {
-                    "map_id": "c4f5670e-2dc1-4d85-81ab-5955a0d0c40c.png",
-                    "scale": 12.57494832070811,
-                    "map_url": "https://dashboard.situm.com/uploads/floor/56164/c4f5670e-2dc1-4d85-81ab-5955a0d0c40c.png"
+                    "map_id": "c01a4b86-89c9-49f0-a29a-9e7a079dfefa.png",
+                    "scale": 19.590267961942576,
+                    "map_url": "https://dashboard.situm.com/uploads/floor/57075/c01a4b86-89c9-49f0-a29a-9e7a079dfefa.png"
                 },
                 "custom_fields": [],
-                "updated_at": "2024-09-10T04:24:03.501+00:00",
-                "created_at": "2024-09-10T04:24:03.501+00:00",
+                "updated_at": "2024-10-09T17:45:49.916+00:00",
+                "created_at": "2024-10-09T17:34:36.809+00:00",
                 "project_id": 17221
             },
             {
-                "id": 56165,
+                "id": 57076,
                 "name": "3rd",
                 "building_id": 17221,
                 "level": 2,
                 "level_height": 0.0,
                 "maps": {
-                    "map_id": "46f2ade9-c7f8-468d-91f4-6f5ba8f1b2b8.png",
-                    "scale": 12.57494832070811,
-                    "map_url": "https://dashboard.situm.com/uploads/floor/56165/46f2ade9-c7f8-468d-91f4-6f5ba8f1b2b8.png"
+                    "map_id": "1a4c0844-37d2-45d5-a20c-98a99faf4c65.png",
+                    "scale": 19.590267961942576,
+                    "map_url": "https://dashboard.situm.com/uploads/floor/57076/1a4c0844-37d2-45d5-a20c-98a99faf4c65.png"
                 },
                 "custom_fields": [],
-                "updated_at": "2024-09-10T04:24:47.339+00:00",
-                "created_at": "2024-09-10T04:24:47.339+00:00",
+                "updated_at": "2024-10-09T17:45:55.035+00:00",
+                "created_at": "2024-10-09T17:34:59.405+00:00",
                 "project_id": 17221
             },
             {
-                "id": 56166,
+                "id": 57077,
                 "name": "4th",
                 "building_id": 17221,
                 "level": 3,
                 "level_height": 0.0,
                 "maps": {
-                    "map_id": "13b3aa63-8729-4499-81bd-7001a412b70d.png",
-                    "scale": 12.57494832070811,
-                    "map_url": "https://dashboard.situm.com/uploads/floor/56166/13b3aa63-8729-4499-81bd-7001a412b70d.png"
+                    "map_id": "bf3e18d7-487d-4f3b-8e16-8c0234339e89.png",
+                    "scale": 19.590267961942576,
+                    "map_url": "https://dashboard.situm.com/uploads/floor/57077/bf3e18d7-487d-4f3b-8e16-8c0234339e89.png"
                 },
                 "custom_fields": [],
-                "updated_at": "2024-09-10T04:25:05.451+00:00",
-                "created_at": "2024-09-10T04:25:05.451+00:00",
+                "updated_at": "2024-10-09T17:45:59.678+00:00",
+                "created_at": "2024-10-09T17:35:17.764+00:00",
                 "project_id": 17221
             }
         ],
         "has_tiles": false,
         "geojson_map_url": null,
         "description": "",
-        "server_url": null,
+        "server_url": "*",
         "user_uuid": "67bc318b-5317-410d-aceb-cb00857663d2"
     },
     {
