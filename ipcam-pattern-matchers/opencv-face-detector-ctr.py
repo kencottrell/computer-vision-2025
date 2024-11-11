@@ -1,8 +1,13 @@
 # note images need to be larger for this to work...
 import cv2
 import  importlib
+# import os
+import sys
+sys.path.append('inputs')
+
 
 module = importlib.import_module('image-input-settings')
+
 
 inputdir =  module.inputdir
 outputdir = module.outputdir

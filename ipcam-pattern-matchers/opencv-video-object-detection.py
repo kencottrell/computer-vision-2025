@@ -1,16 +1,24 @@
 # powershell, for python CLI:  PS C:\Users\kjcot> pip install ultralytics
 # for vscode: # py -m pip install ultralytics
+
+
+import sys
+import importlib
 import cv2
+# import os
+
+
 import numpy as np
 from ultralytics import YOLO
 
-import importlib
 #import time
 import datetime
 ct = datetime.datetime.now()
 
+sys.path.append('inputs')
+module = importlib.import_module('video-input-settings')
+
 debug = False
-module = importlib.import_module('aira-events-tbd')
 
 print('numpy version: ' + np.__version__)
 print('YOLO name: ' + YOLO.__name__)
@@ -28,6 +36,8 @@ print('model name : ' + model.model_name)
 
 # Read the video from specified path 
 # cam = cv2.VideoCapture("C:\\Users\\Admin\\PycharmProjects\\project_1\\openCV.mp4") 
+
+
 
 module = importlib.import_module('video-input-settings')
 
