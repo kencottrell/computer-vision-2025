@@ -1,20 +1,28 @@
 # use "py" - - pip install flask opencv-python
 # py -m pip install <package>   -- this is the only command that works!!
 
+## http://localhost:5000/video_feed
+
 '''
 Open a browser and go to http://<your_ip>:5000/video_feed to view the video stream.
 This setup captures video frames using OpenCV and streams them via Flask, 
 effectively turning your application into a virtual IP camera
 
 '''
+import sys
+import importlib
 
 from flask import Flask, Response
 import cv2
 
+sys.path.append('inputs')
+module = importlib.import_module('video-input-settings')
+ip_cameral_url = module.ip_camera_url
+
 app = Flask(__name__)
 
 def generate_frames():
-    cap = cv2.VideoCapture(0)  # Use 0 for webcam or replace with IP camera URL
+    cap = cv2.VideoCapture(ip_cameral_url)  # Use 0 for webcam or replace with IP camera URL
     while True:
         success, frame = cap.read()
         if not success:

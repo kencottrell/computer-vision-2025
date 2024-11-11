@@ -1,10 +1,22 @@
 from flask import Flask, Response
 import cv2
 
+import sys
+import importlib
+
+from flask import Flask, Response
+
+sys.path.append('inputs')
+module = importlib.import_module('video-input-settings')
+
+ip_cameral_url = module.ip_camera_url
+
 app = Flask(__name__)
 
 def generate_frames():
-    camera = cv2.VideoCapture('rtsp://username:password@camera_ip_address:554')
+    # camera = cv2.VideoCapture('rtsp://username:password@camera_ip_address:554')
+    camera = cv2.VideoCapture(ip_cameral_url)   # use 0 for webcam
+
     static_back = None
 
     while True:
