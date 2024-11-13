@@ -24,14 +24,25 @@ You can use FFmpeg, a powerful multimedia framework, through Python's subprocess
 While not a pure Python solution, it's effective:
 '''
 import subprocess
+import sys
+import importlib
 
-input_file = '/path/to/input.mp4'
+
+sys.path.append('inputs')
+module = importlib.import_module('video-input-settings')
+ip_cameral_url = module.ip_camera_url
+print('video source: ' + ip_cameral_url)
+
+sys.path.append('C:\\Users\\kjcot\\ffmpeg\\')
+
+print('path' + str(sys.path))
+
 output_rtsp = 'rtsp://localhost:8554/live.sdp'
 
 ffmpeg_command = [
     'ffmpeg',
     '-re',
-    '-i', input_file,
+    '-i', ip_cameral_url,
     '-c:v', 'libx264',
     '-preset', 'ultrafast',
     '-f', 'rtsp',

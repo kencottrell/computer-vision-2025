@@ -28,4 +28,3 @@ capture.release()
 out.release()
 
 
-Get Outlook for iOS
