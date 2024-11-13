@@ -1,3 +1,6 @@
+# py -m pip install ffmpeg-python
+
+
 '''
 To connect and use FFmpeg, follow these steps:
 Installation:
@@ -26,28 +29,55 @@ While not a pure Python solution, it's effective:
 import subprocess
 import sys
 import importlib
+import ffmpeg
+from ffmpeg import FFmpeg
 
+# https://github.com/kkroening/ffmpeg-python
+
+debug = False
 
 sys.path.append('inputs')
 module = importlib.import_module('video-input-settings')
-ip_cameral_url = module.ip_camera_url
-print('video source: ' + ip_cameral_url)
+ip_camera_url = module.ip_camera_url
+print('video source: ' + ip_camera_url)
 
-sys.path.append('C:\\Users\\kjcot\\ffmpeg\\')
+# doesn't work: 
+#sys.path.append(r"C:\Users\kjcot\ffmpeg\bin")
+# try one of these
+
+ffmpeg.FFMPEG_BINARY = r"C:\Users\kjcot\ffmpeg\bin\ffmpeg.exe"
+
 
 print('path' + str(sys.path))
 
 output_rtsp = 'rtsp://localhost:8554/live.sdp'
 
-ffmpeg_command = [
-    'ffmpeg',
-    '-re',
-    '-i', ip_cameral_url,
-    '-c:v', 'libx264',
-    '-preset', 'ultrafast',
-    '-f', 'rtsp',
-    '-rtsp_transport', 'tcp',
-    output_rtsp
-]
+ffmpeg.input(ip_camera_url).hflip().output(module.outputdir + 'output.mp4').run()
 
-subprocess.run(ffmpeg_command)
+if debug:
+    ffmpeg = (
+        FFmpeg()
+        .option("y")
+        .input("input.mp4")
+        .output("output.mp4",
+        {"codec:v": "libx264"},
+        vf="scale=1280:-1",
+        preset="veryslow",
+        crf=24
+        )
+    )
+    ffmpeg.execute()
+
+if debug:
+    ffmpeg_command = [
+        'ffmpeg',
+        '-re',
+        '-i', ip_camera_url,
+        '-c:v', 'libx264',
+        '-preset', 'ultrafast',
+        '-f', 'rtsp',
+        '-rtsp_transport', 'tcp',
+        output_rtsp
+    ]
+
+    subprocess.run(ffmpeg_command)
