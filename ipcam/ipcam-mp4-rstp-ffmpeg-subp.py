@@ -4,8 +4,9 @@
 '''
 To connect and use FFmpeg, follow these steps:
 Installation:
-On Windows, download FFmpeg, extract the files, and add the FFmpeg directory to your system's PATH environment variable25.
+1. download FFmpeg, extract the files, and add the FFmpeg directory to your system's PATH environment variable25.
 On Linux or macOS, use package managers like apt or brew to install FFmpeg2.
+2. on windows add ffmpeg\bin directory to system env path
 
 Basic Usage:
 Open a terminal or command prompt.
@@ -30,7 +31,7 @@ import subprocess
 import sys
 import importlib
 import ffmpeg
-from ffmpeg import FFmpeg
+#from ffmpeg import FFmpeg
 
 # https://github.com/kkroening/ffmpeg-python
 
@@ -40,33 +41,34 @@ sys.path.append('inputs')
 module = importlib.import_module('video-input-settings')
 ip_camera_url = module.ip_camera_url
 print('video source: ' + ip_camera_url)
+outputfile = module.outputdir + 'output20.mp4'
 
 # doesn't work: 
 #sys.path.append(r"C:\Users\kjcot\ffmpeg\bin")
-# try one of these
+#ffmpeg.FFMPEG_BINARY = r"C:\Users\kjcot\ffmpeg\bin\ffmpeg.exe"
+# only thing that works is to add ffmpeg bin directory to sys path in Environment
+ip_camera_url = r"\users\kjcot\mp4files\guest-checkin.mp4"
 
-ffmpeg.FFMPEG_BINARY = r"C:\Users\kjcot\ffmpeg\bin\ffmpeg.exe"
-
-
-print('path' + str(sys.path))
+#print('path' + str(sys.path))
 
 output_rtsp = 'rtsp://localhost:8554/live.sdp'
 
-ffmpeg.input(ip_camera_url).hflip().output(module.outputdir + 'output.mp4').run()
-
-if debug:
-    ffmpeg = (
+ffmpeg.input(ip_camera_url).hflip().output(outputfile).run()
+'''
+  ffmpeg = (
         FFmpeg()
         .option("y")
-        .input("input.mp4")
-        .output("output.mp4",
+        .input(ip_camera_url)
+        .output(outputfile),
         {"codec:v": "libx264"},
         vf="scale=1280:-1",
         preset="veryslow",
-        crf=24
-        )
+        crf=24)
     )
+    ))
     ffmpeg.execute()
+'''
+  
 
 if debug:
     ffmpeg_command = [
