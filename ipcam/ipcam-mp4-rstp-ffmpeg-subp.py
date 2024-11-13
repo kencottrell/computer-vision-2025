@@ -38,20 +38,20 @@ import ffmpeg
 debug = False
 
 sys.path.append('inputs')
-module = importlib.import_module('video-input-settings')
+module = importlib.import_module('video-inout-settings')
 ip_camera_url = module.ip_camera_url
 print('video source: ' + ip_camera_url)
-outputfile = module.outputdir + 'output20.mp4'
+outputfile = module.outputdir + 'output1.mp4'
 
 # doesn't work: 
 #sys.path.append(r"C:\Users\kjcot\ffmpeg\bin")
 #ffmpeg.FFMPEG_BINARY = r"C:\Users\kjcot\ffmpeg\bin\ffmpeg.exe"
 # only thing that works is to add ffmpeg bin directory to sys path in Environment
-ip_camera_url = r"\users\kjcot\mp4files\guest-checkin.mp4"
+ip_camera_url = module.ip_camera_url
 
 #print('path' + str(sys.path))
 
-output_rtsp = 'rtsp://localhost:8554/live.sdp'
+output_rtsp = 'rtsp://localhost:554'
 
 ffmpeg.input(ip_camera_url).hflip().output(outputfile).run()
 '''

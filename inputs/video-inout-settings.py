@@ -7,6 +7,7 @@ debug = False
 
 inputdir =  "C:\\Users\\kjcot\\mp4files\\"
 outputdir = inputdir + "data\\"
+output_rstp = 'rtsp://localhost:554/live.sdp'
 
 inputname = 'guest-checkin'
 
@@ -15,4 +16,3 @@ ip_camera_url = inputdir + inputname + '.mp4'
 
 #ip_camera_url = 0
 #inputname = 'kens-webcam'
-ip_camera_url = 'c:\\Users\\kjcot\\mp4files\\guest-checkin.mpg'

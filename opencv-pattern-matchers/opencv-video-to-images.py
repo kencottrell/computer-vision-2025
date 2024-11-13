@@ -9,7 +9,7 @@ import importlib
 import cv2
 import os
 sys.path.append('inputs')
-module = importlib.import_module('video-input-settings')
+module = importlib.import_module('video-inout-settings')
 
 
 print(os.path)

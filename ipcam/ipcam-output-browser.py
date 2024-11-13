@@ -16,7 +16,7 @@ from flask import Flask, Response
 import cv2
 
 sys.path.append('inputs')
-module = importlib.import_module('video-input-settings')
+module = importlib.import_module('video-inout-settings')
 ip_cameral_url = module.ip_camera_url
 
 app = Flask(__name__)

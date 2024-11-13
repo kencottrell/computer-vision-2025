@@ -1,7 +1,16 @@
 import os
+import sys
+import importlib
+
+
+
+sys.path.append('inputs')  # directory of module
+module = importlib.import_module('video-inout-settings')  # module name
+ip_cameral_url = module.ip_camera_url
+
 inputfile = r"C:\Users\kjcot\mp4files\guest-checkin.mp4"
 outputfile = "output6.mp4"
-command = 'ffmpeg -i' + " " + inputfile + " " + outputfile
+command = 'ffmpeg -i' + " " + ip_cameral_url + " " + outputfile
 print('command: ' + command)
 os.system(command)
 

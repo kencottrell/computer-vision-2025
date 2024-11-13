@@ -7,7 +7,7 @@ import importlib
 from flask import Flask, Response
 
 sys.path.append('inputs')
-module = importlib.import_module('video-input-settings')
+module = importlib.import_module('video-inout-settings')
 
 # ip_camera_url = 'rtsp://username:password@camera_ip_address:554')
 ip_cameral_url = module.ip_camera_url

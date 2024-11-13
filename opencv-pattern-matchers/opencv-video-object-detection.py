@@ -16,7 +16,7 @@ import datetime
 ct = datetime.datetime.now()
 
 sys.path.append('inputs')
-module = importlib.import_module('video-input-settings')
+module = importlib.import_module('video-inout-settings')
 
 debug = False
 
