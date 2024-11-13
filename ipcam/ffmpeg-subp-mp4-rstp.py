@@ -35,13 +35,12 @@ import ffmpeg
 
 # https://github.com/kkroening/ffmpeg-python
 
-debug = False
+debug = True
 
 sys.path.append('inputs')
 module = importlib.import_module('video-inout-settings')
 ip_camera_url = module.ip_camera_url
 print('video source: ' + ip_camera_url)
-outputfile = module.outputdir + 'output1.mp4'
 
 # doesn't work: 
 #sys.path.append(r"C:\Users\kjcot\ffmpeg\bin")
@@ -49,11 +48,12 @@ outputfile = module.outputdir + 'output1.mp4'
 # only thing that works is to add ffmpeg bin directory to sys path in Environment
 ip_camera_url = module.ip_camera_url
 
-#print('path' + str(sys.path))
+print('reading this MP4 file: ' + str(ip_camera_url))
 
-output_rtsp = 'rtsp://localhost:554'
+outputfile = module.outputdir + 'output1.mp4'
+output_rtsp = 'rtsp://localhost:554/ken'
 
-ffmpeg.input(ip_camera_url).hflip().output(outputfile).run()
+#ffmpeg.input(ip_camera_url).hflip().output(output_rtsp).run()
 '''
   ffmpeg = (
         FFmpeg()
@@ -69,7 +69,7 @@ ffmpeg.input(ip_camera_url).hflip().output(outputfile).run()
     ffmpeg.execute()
 '''
   
-
+debug = True
 if debug:
     ffmpeg_command = [
         'ffmpeg',

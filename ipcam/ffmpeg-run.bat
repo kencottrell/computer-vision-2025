@@ -1,0 +1,1 @@
+ffmpeg -i C:\Users\kjcot\mp4files\room-service-hallway.mp4  -f rtsp -rtsp_transport tcp  rtsp://192.168.1.206:554/stream

@@ -17,10 +17,12 @@ import cv2
 
 sys.path.append('inputs')
 module = importlib.import_module('video-inout-settings')
-ip_cameral_url = module.ip_camera_url
 
+#ip_cameral_url = module.ip_camera_url
+ip_cameral_url = module.output_rstp
 app = Flask(__name__)
 
+print('reading this producer  to send to browser: ' + ip_cameral_url)
 def generate_frames():
     cap = cv2.VideoCapture(ip_cameral_url)  # Use 0 for webcam or replace with IP camera URL
     while True:
