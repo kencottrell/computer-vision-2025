@@ -1,8 +1,0 @@
-import sys
-import os
-
-# Get the current working directory
-current_dir = os.getcwd()
-
-# Add the current directory to the Python path
-sys.path.append(current_dir)
