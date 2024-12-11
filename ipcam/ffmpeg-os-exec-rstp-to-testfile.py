@@ -23,9 +23,11 @@ https://www.dacast.com/blog/how-to-broadcast-live-stream-using-ffmpeg/
 https://trac.ffmpeg.org/wiki/StreamingGuide
 
 '''
-rstpout  = module.output_rstp
+rstpin  = module.output_rstp
 
 command = 'ffmpeg -i' + " " + ip_cameral_url + "  -f rtsp -rtsp_transport tcp  " + rstpout
+command = "ffmpeg -i " + rstpin  + " -codec copy -f h264 " + output.mp4 -codec copy -f mpegts udp://127.0.0.1:3000"
+
 print('command: ' + command)
 os.system(command)
 
