@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "river-engine-442317-v1",
+  "private_key_id": "5e4999e4d07bf79dcf6c713aa97f93a864aaa577",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCkiB3J/3dHESUz\nuknxMA/GSUBL2buXcablkburvTGuHsJ3rvRNDBu98oHZTk48/IwpU5aZbC+y2mDe\nIsuAwca0/1a3YnRSxaWYOl4wcERCWfIPrtsz/0A0l2yboiR9IE9SjEST0o0V6Ci6\ngdLOXbDSqzvCjKqVSolymaha/EwwPF6e6YwfczTihi6yjNAsMZygt/wmQ15mRR00\nrP5IGEyh6hgv/3L1D3fI7Oo5j08QFAxF9Zr4IlD0ZUTqK+55jHYsoE9JE1aQaaBF\nFcA9djmOfmPEXVv8oLJhUBly80O36Cmjbi55Xj0Abu6O9cxo9IrRgKkrlroQBR99\niOgJ20czAgMBAAECggEAIaEu0ZB1fWGsRHfx0CoeN03WpgpRlSFmVysj/HT12Byy\nbAsnJS5x5y/Pya5/QGjwbywGLsLVtw162jyrctxotKsyOtaVZyu97rETenwf/53p\n47m+VVD5eyZuTRtlsOuvOvSvubVCIDWtSX3qrEKrN0xHsTrWTSCImpN8vWgvXHZO\nSFF6SBxxtCmq3+TZTBBzkI2aiM4lt8segFE+625PSt2Fo2c8/RbG8LHGySGzHsMe\nsqfI6zGbrufADMnEoTleV8PkDpje9i6GG6JIGmUW7kwXydDjGp30fL674VufihZW\nUl95RU2rMeGqNwdm81o/Gh4sz5WOPV3GdnmUf7AboQKBgQDeSyHDFSX7WopFPGP1\nT1tCw7MJ/D/DkRcv1y5iMUKYD1/jai4nclGk3dg11EvmOqLgBunecsljaSV5amQV\nz1VRu6mFziG+Qz0FYfQPmeCUqEniNSe7Y/nxFPWWOiilkUS7sbP1L1iPEdEO55ch\nYtd5PRZZEijNYJpnWU2rCgz4EwKBgQC9etGp6pyJ2ixDBgqPfa3t1FIV3XFbtehU\nScR0nL2N8iou8gEaWephYYkee12Hf3eV1ph3tmePRQcJUnjhtszJ9704BwcpEzYP\nM+MFVco7KStSWQHz963fM/a94/otXSx3RC9wDkEHQWXxmtI92RgU43ZTUIdV+mrT\n4sGz+oKYYQKBgQCc5scT3W+LtOJ38CJV2gd+XoeW+rc/IMAPAoE4ybBJiECUUjP1\nn9lE11lu1UQlYynnmrmkS70eL+9FffTa+Bcus5j6Wv6yPt9pVzRfdqtwAkD0K7S5\nrd2TbsnRmYdrJdgv60QsQZjukxLOxGSGKjAQ4S9O+2RVYmRZok0R9uwkhQKBgFtj\n8+Ca0moDGzowncNcARonQHhfWJ+9e5O8CM+eEid22DXQcAu/trbFjpdvNUt3hbx1\nxxBmoEiQKLasWrWzr87yeQefDCsZowduJV+bY3FpiAWt/K0pl2mC7M3mOfLLb/kO\noDrSBTd0qbEA1csS/PSGSbohq0UjBYexZXBjsb3BAoGBANQ/zrhg6jnNw9kqxVRJ\nrCkckhTZcNZ2e46atSRDmxtk4CzWi5oSnHCcuxve9USbxh/pLzpEW9uuCrGNhNdU\nJoBa4BT5DCvmbP5PbrOH3TENc1fQKeoNSkchffik6fyX74KFFFRP6D03JYBouyDs\niMpa9jP3t6EaclEaZydPRc/z\n-----END PRIVATE KEY-----\n",
+  "client_email": "kens-video-intelligence-241211@river-engine-442317-v1.iam.gserviceaccount.com",
+  "client_id": "115758889382797806186",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/kens-video-intelligence-241211%40river-engine-442317-v1.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
