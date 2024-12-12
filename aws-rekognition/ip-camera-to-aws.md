@@ -1,5 +1,0 @@
-To connect IP cameras to AWS, you can use various methods depending on your requirements:
-Amazon Kinesis Video Streams: This service allows you to securely ingest video streams from IP cameras using the Kinesis Video Streams Producer SDK or a cloud gateway. It supports real-time video streaming and storage6.
-AWS IoT Core and SORACOM: For smart camera setups, you can use AWS IoT Core with Amazon Kinesis Video Streams and SORACOM for connectivity. This setup is suitable for IoT and AI applications3.
-Multicast Technology: For large-scale deployments, multicast technology via AWS Transit Gateway can distribute video streams from cameras to multiple locations, suitable for hybrid on-premises and cloud environments1.
-AWS SDK for IP Cameras: AWS provides an open-source SDK to upload video clips directly to Amazon S3, supporting scalable cloud architecture without deploying additional resources4.
