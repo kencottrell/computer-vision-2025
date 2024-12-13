@@ -1,4 +1,14 @@
 import boto3
+import sys
+import importlib
+import cv2
+import os
+print(os.path)
+print(cv2.__version__)
+
+sys.path.append('inputs')
+inputs_module = importlib.import_module('video-inout-settings')
+classes_module = importlib.import_module('classes')
 
 debug = True
 aws_access_key_id = ''
