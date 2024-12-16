@@ -3,12 +3,20 @@ import sys
 import importlib
 import cv2
 import os
+import logging
+
 print('OS Path: ' + str(os.path))
 print('OpenCV version: ' + cv2.__version__)
+logger = logging.getLogger(__name__)
+print('Logger info: ' + str(logger.level))
+
+def do_something():
+    logger.info('Doing something')
 
 sys.path.append('inputs')
 inputs_module = importlib.import_module('video-inout-settings')
 classes_module = importlib.import_module('classes')
+# usage_demo = importlib.import_module('usage-demo')
 
 debug = False
 aws_access_key_id = ''     # UNUSED , makes use of AWS CLI, otherwise place value here
