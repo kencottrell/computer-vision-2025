@@ -5,6 +5,8 @@ import cv2
 import os
 import logging
 
+debug = False
+
 print('OS Path: ' + str(os.path))
 print('OpenCV version: ' + cv2.__version__)
 logger = logging.getLogger(__name__)
@@ -14,11 +16,16 @@ def do_something():
     logger.info('Doing something')
 
 sys.path.append('inputs')
+sys.path.append('classes')
 inputs_module = importlib.import_module('video-inout-settings')
-classes_module = importlib.import_module('classes')
+
+if debug:
+    classes_module = importlib.import_module('RekognitionCollectionManager')
+    classes_module2 = importlib.import_module('RekognitionCollection')
+    classes_module3 = importlib.import_module('RekognitionImage')
+
 # usage_demo = importlib.import_module('usage-demo')
 
-debug = False
 aws_access_key_id = ''     # UNUSED , makes use of AWS CLI, otherwise place value here
 aws_secret_access_key = ''   # makes use of AWS CLI creds, otherwise place value here
 
@@ -53,6 +60,11 @@ if debug:
     print('kinesis endpoint: ' + str(kvs._endpoint))
     print('s3 endpoint: ' + str(s3._endpoint))
     response = s3.list_objects(Bucket=input_bucket)
+# fix thus
+    collection_manager = classes_module.RekognitionCollectionManager
+    collection = classes_module2.RekognitionCollection
+    image = classes_module3.RekognitionImage
+
 
 s3.upload_file(upload_test_file, input_bucket, 'hello.txt')
 
@@ -80,6 +92,4 @@ def compare_faces(bucket, source_file, target_file, region):
         print(f"The face at {position['Left']} {position['Top']} matches with {similarity}% confidence")
     image_target.close()
     return len(response['FaceMatches'])
-
-
 
