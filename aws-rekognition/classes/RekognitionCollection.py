@@ -120,7 +120,7 @@ class RekognitionCollection:
             return faces
 
 
-   def index_faces(self, image, max_faces):
+    def index_faces(self, image, max_faces):
         """
         Finds faces in the specified image, indexes them, and stores them in the
         collection.

@@ -4,8 +4,18 @@ import importlib
 import cv2
 import os
 import logging
+import classes.RekognitionCollection as rc
+import classes.RekognitionCollectionManager as rcm
+import classes.RekognitionImage as ri
+
 
 debug = False
+
+
+print('AWS rekogition Collection Mgr class: ' + str(rcm.__name__))
+print('AWS rekogition Collection  class: ' + str(rc.__name__))
+print('AWS rekogition image  class: ' + str(ri.__name__))
+
 
 print('OS Path: ' + str(os.path))
 print('OpenCV version: ' + cv2.__version__)
@@ -18,11 +28,9 @@ def do_something():
 sys.path.append('inputs')
 sys.path.append('classes')
 inputs_module = importlib.import_module('video-inout-settings')
+inputs_module = importlib.import_module('classes')
 
-if debug:
-    classes_module = importlib.import_module('RekognitionCollectionManager')
-    classes_module2 = importlib.import_module('RekognitionCollection')
-    classes_module3 = importlib.import_module('RekognitionImage')
+
 
 # usage_demo = importlib.import_module('usage-demo')
 
@@ -60,10 +68,7 @@ if debug:
     print('kinesis endpoint: ' + str(kvs._endpoint))
     print('s3 endpoint: ' + str(s3._endpoint))
     response = s3.list_objects(Bucket=input_bucket)
-# fix thus
-    collection_manager = classes_module.RekognitionCollectionManager
-    collection = classes_module2.RekognitionCollection
-    image = classes_module3.RekognitionImage
+
 
 
 s3.upload_file(upload_test_file, input_bucket, 'hello.txt')
