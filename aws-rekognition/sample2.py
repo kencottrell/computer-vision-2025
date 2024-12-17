@@ -4,17 +4,19 @@ import importlib
 import cv2
 import os
 import logging
-import classes.RekognitionCollection as rc
-import classes.RekognitionCollectionManager as rcm
-import classes.RekognitionImage as ri
+from classes.RekognitionCollection import RekognitionCollection as rc
+from  classes.RekognitionCollectionManager import RekognitionCollectionManager as rcm
+from classes.RekognitionImage import RekognitionImage as ri
 
 
 debug = False
 
 
-print('AWS rekogition Collection Mgr class: ' + str(rcm.__name__))
-print('AWS rekogition Collection  class: ' + str(rc.__name__))
-print('AWS rekogition image  class: ' + str(ri.__name__))
+
+if debug:
+    print('AWS rekognition Collection Mgr class: ' + str(rcm.__name__))
+    print('AWS rekognition Collection  class: ' + str(rc.__name__))
+    print('AWS rekognition image  class: ' + str(ri.__name__))
 
 
 print('OS Path: ' + str(os.path))
@@ -69,7 +71,7 @@ if debug:
     print('s3 endpoint: ' + str(s3._endpoint))
     response = s3.list_objects(Bucket=input_bucket)
 
-
+test = ri(image_file, "testimage", rek)
 
 s3.upload_file(upload_test_file, input_bucket, 'hello.txt')
 
