@@ -7,16 +7,28 @@ import logging
 from classes.RekognitionCollection import RekognitionCollection as rc
 from  classes.RekognitionCollectionManager import RekognitionCollectionManager as rcm
 from classes.RekognitionImage import RekognitionImage as ri
+from classes.RekognitionFace import RekognitionFace as rf
+from classes.RekognitionPerson import RekognitionPerson as rp
 
+from pprint import pprint
 
-debug = False
+from botocore.exceptions import ClientError
+
+debug = True
 
 
 
 if debug:
+    pprint('pprint: ' + str(pprint))
+    print('boto3 client error: ' + ClientError.__name__)
     print('AWS rekognition Collection Mgr class: ' + str(rcm.__name__))
     print('AWS rekognition Collection  class: ' + str(rc.__name__))
     print('AWS rekognition image  class: ' + str(ri.__name__))
+    print('AWS rekognition face  class: ' + str(rf.__name__))
+    print('AWS rekognition person  class: ' + str(rp.__name__))
+
+
+debug = False
 
 
 print('OS Path: ' + str(os.path))
@@ -34,11 +46,6 @@ inputs_module = importlib.import_module('classes')
 
 
 
-# usage_demo = importlib.import_module('usage-demo')
-
-aws_access_key_id = ''     # UNUSED , makes use of AWS CLI, otherwise place value here
-aws_secret_access_key = ''   # makes use of AWS CLI creds, otherwise place value here
-
 upload_test_file = 'C:\\Users\\kjcot\\mp4files\\testfile.txt'
 
 
@@ -55,6 +62,9 @@ arn = 'arn:aws:s3:::' + input_bucket + '/' + image_file
 object_url = 'https://' + input_bucket+ '.s3.us-east-2.amazonaws.com/' + image_file
 
 
+# 
+# aws_access_key_id = ''     # UNUSED , makes use of AWS CLI, otherwise place value here
+# aws_secret_access_key = ''   # makes use of AWS CLI creds, otherwise place value here
 # rek = boto3.client('rekognition', 
 #                           aws_access_key_id=aws_access_key_id,
 #                           aws_secret_access_key=aws_secret_access_key,
