@@ -4,6 +4,8 @@ import importlib
 import cv2
 import os
 import logging
+
+
 from classes.RekognitionCollection import RekognitionCollection as rc
 from  classes.RekognitionCollectionManager import RekognitionCollectionManager as rcm
 from classes.RekognitionImage import RekognitionImage as ri
@@ -14,6 +16,17 @@ from pprint import pprint
 
 from botocore.exceptions import ClientError
 
+import requests
+
+import json
+import time
+import datetime
+
+ct = datetime.datetime.now()
+ts = ct.timestamp()
+timenow = ct.strftime("%H:%M:%S")
+ts = ct.time
+
 debug = True
 
 
@@ -21,6 +34,9 @@ debug = True
 if debug:
     pprint('pprint: ' + str(pprint))
     print('boto3 client error: ' + ClientError.__name__)
+    print('requests obj: ' + str(requests.__version__))
+    print('json path: ' + str(json.__path__))
+    print('timenow / time obj: ' +str(timenow.__len__) + str(time.timezone))
     print('AWS rekognition Collection Mgr class: ' + str(rcm.__name__))
     print('AWS rekognition Collection  class: ' + str(rc.__name__))
     print('AWS rekognition image  class: ' + str(ri.__name__))
@@ -83,7 +99,8 @@ if debug:
 
 test = ri(image_file, "testimage", rek)
 
-s3.upload_file(upload_test_file, input_bucket, 'hello.txt')
+s3testfilename = str(ts) + 'hello.txt'
+s3.upload_file(upload_test_file, input_bucket, s3testfilename)
 
 def detect_faces(image_path):
     with open(image_path, 'rb') as image_file:
