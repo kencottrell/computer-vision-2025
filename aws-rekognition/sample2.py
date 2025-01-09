@@ -25,9 +25,13 @@ import datetime
 ct = datetime.datetime.now()
 ts = ct.timestamp()
 timenow = ct.strftime("%H:%M:%S")
-ts = ct.time
+timestamp = int(round(ct.timestamp()))
+logger = logging.getLogger(__name__)
+
+ 
 
 debug = True
+uploadtestfile = True
 
 
 
@@ -36,7 +40,12 @@ if debug:
     print('boto3 client error: ' + ClientError.__name__)
     print('requests obj: ' + str(requests.__version__))
     print('json path: ' + str(json.__path__))
-    print('timenow / time obj: ' +str(timenow.__len__) + str(time.timezone))
+    # print('timenow / time obj: ' +str(timenow.__len__) + str(time.timezone))
+    print("Current datetime: " +  str(timenow) +  " integer timestamp: " + str(timestamp))
+    print('OS Path: ' + str(os.path))
+    print('OpenCV version: ' + cv2.__version__)
+    print('Logger info: ' + str(logger.level))
+    print('=======Rekognition Objects==========')
     print('AWS rekognition Collection Mgr class: ' + str(rcm.__name__))
     print('AWS rekognition Collection  class: ' + str(rc.__name__))
     print('AWS rekognition image  class: ' + str(ri.__name__))
@@ -47,10 +56,7 @@ if debug:
 debug = False
 
 
-print('OS Path: ' + str(os.path))
-print('OpenCV version: ' + cv2.__version__)
-logger = logging.getLogger(__name__)
-print('Logger info: ' + str(logger.level))
+
 
 def do_something():
     logger.info('Doing something')
@@ -61,8 +67,19 @@ inputs_module = importlib.import_module('video-inout-settings')
 inputs_module = importlib.import_module('classes')
 
 
+directory = 'C:\\Users\\kjcot\\mp4files\\'
+file_name = "my_file.txt"
 
-upload_test_file = 'C:\\Users\\kjcot\\mp4files\\testfile.txt'
+if not os.path.exists(directory):
+    os.makedirs(directory)
+s3testfilename = str(timestamp) + 'hello.txt'
+file_path = os.path.join(directory, s3testfilename)
+
+# 4. Open the file in write mode and write the content
+with open(file_path, "w") as f:
+    f.write("This is the content of my file. " + "timestamp=" + str(timestamp))
+
+
 
 
 image_file = 'hotel-people.jpg'
@@ -99,8 +116,11 @@ if debug:
 
 test = ri(image_file, "testimage", rek)
 
-s3testfilename = str(ts) + 'hello.txt'
-s3.upload_file(upload_test_file, input_bucket, s3testfilename)
+if uploadtestfile:
+    s3.upload_file(file_path, input_bucket, s3testfilename)
+    print(' source file read: ' + file_path)
+    print(' uploaded to s3 as file name: ' + s3testfilename)
+    uploadtestfile = False
 
 def detect_faces(image_path):
     with open(image_path, 'rb') as image_file:
