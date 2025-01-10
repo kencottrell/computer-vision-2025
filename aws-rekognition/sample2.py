@@ -19,7 +19,7 @@ from botocore.exceptions import ClientError
 import requests
 
 import json
-import time
+#import time
 import datetime
 
 ct = datetime.datetime.now()
@@ -31,7 +31,7 @@ logger = logging.getLogger(__name__)
  
 
 debug = True
-uploadtestfile = True
+uploadtestfile = False
 
 
 
@@ -63,8 +63,7 @@ def do_something():
 
 sys.path.append('inputs')
 sys.path.append('classes')
-inputs_module = importlib.import_module('video-inout-settings')
-inputs_module = importlib.import_module('classes')
+inputs_module = importlib.import_module('image-input-settings')
 
 
 directory = 'C:\\Users\\kjcot\\mp4files\\'
@@ -75,24 +74,26 @@ if not os.path.exists(directory):
 s3testfilename = str(timestamp) + 'hello.txt'
 file_path = os.path.join(directory, s3testfilename)
 
-# 4. Open the file in write mode and write the content
 with open(file_path, "w") as f:
-    f.write("This is the content of my file. " + "timestamp=" + str(timestamp))
+    f.write("This is the content of my file. " + "Current Time: " + str(timenow))
 
 
 
 
-image_file = 'hotel-people.jpg'
-#image_file = 'manyfaces.jpg'
-video_file = '3peoplewalking-vert.mp4'
-#video_file = '3peoplewalking-horiz.mp4'
+image_file_name = 'hotel-people.jpg'
+image_file = inputs_module.inputdir + image_file_name
+#  'manyfaces.jpg'
+video_file_name = '3peoplewalking-vert.mp4'
+# = '3peoplewalking-horiz.mp4'
+
 
 region_name = 'us-east-2'
 input_bucket = 'kens-input-files-bucket'
 
-s3uri = 's3://' + input_bucket + '/' + image_file
-arn = 'arn:aws:s3:::' + input_bucket + '/' + image_file
-object_url = 'https://' + input_bucket+ '.s3.us-east-2.amazonaws.com/' + image_file
+s3uri = 's3://' + input_bucket + '/' + image_file_name
+arn = 'arn:aws:s3:::' + input_bucket + '/' + image_file_name
+object_url = 'https://' + input_bucket+ '.s3.us-east-2.amazonaws.com/' + image_file_name
+
 
 
 # 
@@ -114,7 +115,13 @@ if debug:
     print('s3 endpoint: ' + str(s3._endpoint))
     response = s3.list_objects(Bucket=input_bucket)
 
-test = ri(image_file, "testimage", rek)
+# test = ri(image_file, "testimage", rek)
+testimage = ri.from_file(image_file, rek, "testimage2")
+testcollectionmgr = rcm(rek)
+testcollection = testcollectionmgr.create_collection("kens-example-collection2")
+print(f"Created collection {testcollection.collection_id}:")
+pprint(testcollection.describe_collection())
+
 
 if uploadtestfile:
     s3.upload_file(file_path, input_bucket, s3testfilename)

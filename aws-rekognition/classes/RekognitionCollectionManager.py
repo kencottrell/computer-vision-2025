@@ -1,3 +1,7 @@
+import boto3
+from botocore.exceptions import ClientError
+
+
 class RekognitionCollectionManager:
     """
     Encapsulates Amazon Rekognition collection management functions.
@@ -26,9 +30,9 @@ class RekognitionCollectionManager:
             )
             response["CollectionId"] = collection_id
             collection = RekognitionCollection(response, self.rekognition_client)
-            logger.info("Created collection %s.", collection_id)
+            print("Created collection %s.", collection_id)
         except ClientError:
-            logger.exception("Couldn't create collection %s.", collection_id)
+            print("Couldn't create collection %s.", collection_id)
             raise
         else:
             return collection
@@ -47,7 +51,7 @@ class RekognitionCollectionManager:
                 for col_id in response["CollectionIds"]
             ]
         except ClientError:
-            logger.exception("Couldn't list collections.")
+            print("Couldn't list collections.")
             raise
         else:
             return collections

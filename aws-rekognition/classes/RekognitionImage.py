@@ -90,6 +90,8 @@ class RekognitionImage:
         """
         with open(image_file_name, "rb") as img_file:
             image = {"Bytes": img_file.read()}
+            print('image from file' + str(image.keys))
+
         name = image_file_name if image_name is None else image_name
         return cls(image, name, rekognition_client)
 
