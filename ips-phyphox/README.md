@@ -28,3 +28,8 @@ to run:
 6. for connection data
    https://phyphox.org/wiki/index.php/Network_Connections#Metadata%7Cnetwork
    
+
+7. advanced phyphox python class
+   https://gist.github.com/pgaskin/85402391313e868c66618439cbc70e8d
+
+   

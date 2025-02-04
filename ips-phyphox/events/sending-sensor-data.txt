@@ -1,0 +1,27 @@
+To configure Phyphox to send sensor data to a network service, follow these steps:
+1. Create a Custom Phyphox Experiment
+Use the Phyphox file format (XML) to define your experiment. You can create or edit the .phyphox file using a text editor28.
+2. Define the Network Connection
+Include a <network> block in your XML file. For example:
+xml
+<network>
+    <connection interval="1" address="https://yourserver.com/api/input" id="submit" service="http/post" conversion="json" privacy="https://your-privacy-policy-url.com" autoConnect="true">
+        <send id="sensorData" type="buffer">bufferName</send>
+    </connection>
+</network>
+interval: Sets how often (in seconds) data is sent.
+address: The URL of your network service.
+service: Protocol used (e.g., http/post or mqtt).
+send: Specifies the buffer containing sensor data24.
+3. Configure Buffers
+Define which sensor data to send by assigning it to buffers in your experiment configuration.
+Example:
+xml
+<buffer id="bufferName" type="array"/>
+4. Trigger Data Transmission
+Use either:
+The interval property for periodic transmission.
+A button trigger with <trigger> in your experiment configuration23.
+5. Set Up the Receiving Server
+Ensure your server can handle incoming data (e.g., JSON or CSV format). Use appropriate endpoints and protocols to parse the data23.
+Once configured, load the experiment into Phyphox, and it will send sensor data to the specified network service at defined intervals or based on triggers.

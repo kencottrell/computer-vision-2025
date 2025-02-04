@@ -1,0 +1,19 @@
+{
+    "buffer": {
+      "gps_lat": {
+        "size": <size>,
+        "updateMode": "<mode>",
+        "buffer": [<values>]
+      },
+      "gps_lon": {
+        "size": <size>,
+        "updateMode": "<mode>",
+        "buffer": [<values>]
+      },
+      // ... other requested GPS buffers
+    },
+    "status": {
+      // status information
+    }
+  }
+  

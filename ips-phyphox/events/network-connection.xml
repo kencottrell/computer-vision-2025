@@ -1,0 +1,5 @@
+<network>
+    <connection interval="1" address="https://yourserver.com/api/input" id="submit" service="http/post" conversion="json" privacy="https://your-privacy-policy-url.com" autoConnect="true">
+        <send id="sensorData" type="buffer">bufferName</send>
+    </connection>
+</network>

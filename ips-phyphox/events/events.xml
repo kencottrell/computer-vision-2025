@@ -1,0 +1,7 @@
+<analysis>
+    <trigger>
+        <source>buffer</source>
+        <condition>value > threshold</condition>
+        <action>output</action>
+    </trigger>
+</analysis>
