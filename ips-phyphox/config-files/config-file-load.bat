@@ -1,0 +1,1 @@
+http://<phyphox-device-IP>:8080/control?cmd=load&url=<file-URL>
