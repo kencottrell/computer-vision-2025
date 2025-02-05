@@ -1,0 +1,69 @@
+{
+  "crc32": "880303e5",
+  "localTitle": "Location (GPS)",
+  "category": "Raw Sensors",
+  "inputs": [
+    {
+      "outputs": [
+        { "lat": "lat" },
+        { "lon": "lon" },
+        { "z": "z" },
+        { "zwgs84": "zwgs84" },
+        { "v": "v" },
+        { "dir": "dir" },
+        { "t": "t" },
+        { "accuracy": "accuracy" },
+        { "zAccuracy": "zAccuracy" },
+        { "status": "status" },
+        { "satellites": "satellites" }
+      ],
+      "source": "location"
+    }
+  ],
+  "localCategory": "Raw Sensors",
+  "export": [
+    {
+      "set": "Raw Data",
+      "sources": [
+        { "buffer": "t", "label": "Time (s)" },
+        { "buffer": "lat", "label": "Latitude (°)" },
+        { "buffer": "lon", "label": "Longitude (°)" },
+        { "buffer": "z", "label": "Altitude (m)" },
+        { "buffer": "zwgs84", "label": "Altitude WGS84 (m)" },
+        { "buffer": "v", "label": "Speed (m/s)" },
+        { "label": "Direction (°)", "buffer": "dir" },
+        { "buffer": "dist", "label": "Distance (km)" },
+        { "label": "Horizontal Accuracy (m)", "buffer": "accuracy" },
+        { "buffer": "zAccuracy", "label": "Vertical Accuracy (m)" },
+        { "label": "Satellites", "buffer": "satellites" }
+      ]
+    }
+  ],
+  "buffers": [
+    { "name": "countUpdated", "size": 1 },
+    { "name": "countUpdated+1", "size": 1 },
+    { "name": "countT", "size": 1 },
+    { "size": 0, "name": "lat" },
+    { "size": 0, "name": "subLon" },
+    { "name": "dLat", "size": 0 },
+    { "name": "startLat", "size": 1 },
+    { "size": 0, "name": "dLon" },
+    { "name": "startLon", "size": 1 },
+    { "size": 0, "name": "dist" },
+    { "name": "d", "size": 0 },
+    { "name": "status", "size": 1 },
+    { "size": 0, "name": "subLat" },
+    { "size": 1, "name": "diststart" },
+    { "name": "t", "size": 0 },
+    { "name": "v", "size": 0 },
+    { "name": "z", "size": 0 },
+    { "name": "accuracy", "size": 0 },
+    { "size": 0, "name": "lon" },
+    { "name": "zwgs84", "size": 0 },
+    { "name": "zAccuracy", "size": 0 },
+    { "size": 0, "name": "dnew" },
+    { "name": "dir", "size": 0 },
+    { "name": "satellites", "size": 0 }
+  ],
+  "title": "Location (GPS)"
+}
