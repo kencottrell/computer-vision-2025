@@ -3,9 +3,10 @@ import socketserver
 import os
 PORT = 8000
 
+# type into browser: http://localhost:8000/
 
 # Set the directory to serve files from
-os.chdir('/path/to/your/directory')
+os.chdir('C:\\Users\\kjcot\\iopen-video-intelligence\\ips-phyphox')
 
 Handler = http.server.SimpleHTTPRequestHandler
 

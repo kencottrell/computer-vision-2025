@@ -83,14 +83,14 @@ def export():
 def poll_gps_data():
     #CHANNELS = ["latitude", "longitude", "altitude"]  # Example channels for GPS data
     CHANNELS = ["lat", "lon", "z", "t"]  # Example channels for GPS data
-    count = 0
+
     while True:
         try:
         # Build the URL for data retrieval
             url = f"{PHY_ADDRESS}/get?" + "&".join(CHANNELS)
             response = requests.get(url)
             data = response.json()
-        
+      
 
         # Process the received data
             print("-----")
@@ -102,7 +102,8 @@ def poll_gps_data():
     
         except Exception as e:
             print("Error:", e)
-        count = count + 1
+      
+    
        
 
         time.sleep(1)  # Adjust interval as needed
