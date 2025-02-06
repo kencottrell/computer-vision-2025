@@ -2,12 +2,15 @@
 import requests
 import time
 import importlib
-
+import subprocess
+import sys
 import jmespath
 import json
+import os
+
 print(jmespath.__path__)
 
-module = importlib.import_module('phyphox-server-phone')  # ken's iphone ip
+module = importlib.import_module('settings')  # ken's iphone ip
 
 single_pass = False
 
@@ -20,14 +23,7 @@ Basic syntax
    /get?gps_lat&gps_lon&gps_alt&gps_speed&gps_z&gps_accuracy&gps_satellites
 
 
-Available GPS buffers:
-gps_lat: Latitude
-gps_lon: Longitude
-gps_alt: Altitude
-gps_speed: Speed
-gps_z: Vertical speed
-gps_accuracy: Accuracy of the location
-gps_satellites: Number of satellites used
+
 
 example:
   /get?gps_lat=full&gps_lon=full&gps_alt=full
@@ -35,18 +31,29 @@ example:
 threshold:
   /get?gps_lat=<last_known_time>&gps_lon=<last_known_time>|gps_lat
 
-
-  
-
 '''
+
+CONFIG_FILE_SERVICE_RUNNING = False
+
+
 def load_config_file():
-    phyphox_ip = "10.0.0.236"  # Replace with your device's IP
-    config_url = "http://your-server.com/experiment.phyphox"  # Replace with your file URL
-    response = requests.get(f"http://{phyphox_ip}:8080/control?cmd=load&url={config_url}")
+    config_url = module.CONFIG_DIR + module.CONFIG_FILE
+    # config_url = "http://your-serverC.com/experiment.phyphox"  # Replace with your file URL
+    response = requests.get(f"http://{PHY_ADDRESS}:8080/control?cmd=load&url={config_url}")
     print(response.status_code, response.text)
 
 
+def run_config_file_server():
 
+    directory = r"C:\Users\kjcot\iopen-video-intelligence\ips-phyphox"
+   
+    sys.path.append(directory)
+    subprocess.run(["python", "config-http-file-server1.py"]) 
+
+
+'''for file in os.listdir(directory):
+        print(file)
+'''
 
 
 
@@ -199,7 +206,13 @@ if single_pass:    # start experiment, allow remote access and wait for code to 
     send_command("stop")   # Stop the experiment
     send_command("clear")
 else :    # start experiment and leave running
-    config = "/config"
+    TESTLOADER = False
+    if TESTLOADER:
+        run_config_file_server()
+        load_config_file()
+
+    else:
+        config = "/config"
     # get_config(config)
-    poll_gps_data()
-    fetch_data()
+        poll_gps_data()
+        fetch_data()
