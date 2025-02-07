@@ -1,0 +1,5 @@
+<network>
+    <connection interval="1" address="http:192.168.1.206/sensor-data" id="submit" service="http/post" conversion="json" privacy="https://your-privacy-policy-url.com" autoConnect="true">
+        <send id="sensorData" type="buffer">bufferName</send>
+    </connection>
+</network>

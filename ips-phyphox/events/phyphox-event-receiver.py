@@ -39,7 +39,10 @@ app = Flask(__name__)
 def receive_data():
     data = request.json  # Parse JSON data sent by Phyphox
     print(data)          # Log or process the data
+    print("client caller: " + get_ip())
     return "Data received", 200
+def get_ip():
+    return f"Client  IP address is: {request.remote_addr}"
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
