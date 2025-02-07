@@ -41,9 +41,10 @@ CONFIG_FILE_SERVICE_RUNNING = False
 def load_config_file():
 
     config_url = module.CONFIG_URL
+    device_url = f"{PHY_ADDRESS}/control?cmd=load&url={config_url}"
     # config_url = "http://your-serverC.com/experiment.phyphox"  # Replace with your file URL
     try: 
-        response = requests.get(f"http://{PHY_ADDRESS}:8080/control?cmd=load&url={config_url}")
+        response = requests.get(device_url)
         print(response.status_code, response.text)
     except Exception as e:
         print(f"Failed to load config file: {e}")
