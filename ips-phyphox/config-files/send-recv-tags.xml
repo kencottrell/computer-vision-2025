@@ -1,0 +1,7 @@
+<network>
+  <connection id="gps_stream" service="http" address="http://your-server.com/endpoint" interval="1">
+    <send id="gps_latitude" type="buffer" keep="false">latitude</send>
+    <send id="gps_longitude" type="buffer" keep="false">longitude</send>
+    <receive id="server_response" append="true">response_buffer</receive>
+  </connection>
+</network>

@@ -246,9 +246,11 @@
       <data name="Satellites">satellites</data>
     </set>
   </export>
-  <network>
-    <connection interval="1" address="http:192.168.1.206/sensor-data" id="submit" service="http/post" conversion="json" privacy="https://your-privacy-policy-url.com" autoConnect="true">
-        <send id="sensorData" type="buffer">z</send>
-    </connection>
+<network>
+  <connection id="gps_stream" service="http/post" address="http:192.168.1.206/sensor-data" interval="1">
+    <send id="gps_latitude" type="buffer" datatype="number" keep="false">lat</send>
+    <send id="gps_longitude" type="buffer" datatype="number" keep="false">lon</send>
+    <send id="gps_longitude" type="buffer" datatype="number" keep="false">z</send>
+  </connection>
 </network>
 </phyphox>

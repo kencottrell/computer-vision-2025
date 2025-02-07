@@ -1,0 +1,15 @@
+id: A unique identifier for the data being sent (e.g., gps_latitude).
+type: Specifies the type of data:
+buffer: Sends the contents of a buffer (e.g., GPS latitude).
+meta: Sends metadata (e.g., device info).
+time: Sends the current system time.
+keep: Controls whether to clear the buffer after sending:
+true: Keeps data in the buffer (default).
+false: Clears the buffer after sending, avoiding duplicates.
+datatype: Determines how to send buffer data:
+array: Sends all values in the buffer (default).
+number: Sends only the last value.
+
+Example:
+<send id="gps_latitude" type="buffer" datatype="number" keep="false">latitude</send>
+<send id="gps_longitude" type="buffer" datatype="number" keep="false">longitude</send>
