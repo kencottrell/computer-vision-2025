@@ -1,6 +1,6 @@
 <phyphox xmlns="https://phyphox.org/xml" version="1.18">
   <title>Kens 250207 GPS</title>
-  <category>Raw Sensors</category>
+  <category>Kens Beta</category>
   <color>224f77</color>
   <description>
         Get raw position data from satellite navigation.
@@ -246,4 +246,9 @@
       <data name="Satellites">satellites</data>
     </set>
   </export>
+  <network>
+    <connection interval="1" address="http:192.168.1.206/sensor-data" id="submit" service="http/post" conversion="json" privacy="https://your-privacy-policy-url.com" autoConnect="true">
+        <send id="sensorData" type="buffer">z</send>
+    </connection>
+</network>
 </phyphox>
