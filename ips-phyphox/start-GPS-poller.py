@@ -8,9 +8,13 @@ import jmespath
 import json
 import os
 from urllib3.exceptions import NameResolutionError
+from pyproj import Proj, Transformer
+
+# Define a transformer from WGS84 (EPSG:4326) to UTM or another meter-based CRS
+transformer = Transformer.from_crs("EPSG:4326", "EPSG:32633", always_xy=True)
 
 print(jmespath.__path__)
-print(sys.api_version, os.path, json.__name__)
+print(sys.api_version, os.path, json.__name__, Proj.__name__, NameResolutionError.__name__)
 
 module = importlib.import_module('settings')  # ken's iphone ip
 
@@ -65,6 +69,14 @@ def run_config_file_server():
 def poll_gps_data():
     #CHANNELS = ["latitude", "longitude", "altitude"]  # Example channels for GPS data
     CHANNELS = ["lat", "lon", "z", "t"]  # Example channels for GPS data
+    
+    # Example coordinates (longitude, latitude) to show subtraction
+    lon, lat = -80.545065, 43.47798167
+
+    # Convert to meters
+    x, y = transformer.transform(lon, lat)
+
+    print(f"Sample Coordinates in meters: x={x}, y={y}")
 
     while True:
         try:
@@ -78,9 +90,20 @@ def poll_gps_data():
             print("-----")
             for channel in CHANNELS:
                 values = data["buffer"][channel]["buffer"]
+                
                 print(f"{channel}: {values[-1]}")  # Print the most recent value
-               
 
+                lat = data["buffer"]["lat"]["buffer"]
+                lon = data["buffer"]["lon"]["buffer"]
+                lonm, latm = transformer.transform(lon, lat)
+                print(f"lat, lon in meters:  lat={latm}, lon={lonm}")
+                #float_list = [float(item) for item in string_list]
+                #xdiff = x - float(str(latm))
+                #ydiff = y - float(str(lonm))
+                #print(f"difference in lat, lon : lat{xdiff}, lon{ydiff}")
+                #string_list = ['0.49', '0.54', '0.55', '0.54']
+                #float_list = [float(item) for item in string_list]
+                #print(float_list)
     
         except Exception as e:
             print("Error:", e)
