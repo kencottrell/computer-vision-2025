@@ -1,0 +1,10 @@
+Key Points:
+async Function: The event listener's callback is defined as an async function, enabling the use of await for asynchronous operations.
+
+Non-Blocking Execution: The await keyword pauses execution within the function until the fetch() promise resolves but does not block other JavaScript code from running.
+
+Error Handling: Use a try-catch block to handle potential errors during the REST call (e.g., network issues or server errors).
+
+Event Listener Behavior: Adding an async function as a callback works seamlessly because async functions return promises, which are managed by JavaScript's event loop without affecting event listener behavior134.
+
+This approach ensures your REST call is asynchronous and integrates well with JavaScript's event-driven model.
