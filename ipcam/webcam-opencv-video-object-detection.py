@@ -44,6 +44,7 @@ inputdir =  module.inputdir
 outputdir = module.outputdir
 inputname = module.inputname
 ip_camera_url = module.ip_camera_url
+ip_camera_url = 0
  
 # cam = cv2.VideoCapture(mp4samplefile)
 
