@@ -1,7 +1,0 @@
-<network>
-  <connection id="gps_stream" service="http/post" address="http:192.168.1.206/sensor-data" interval="1">
-    <send id="gps_latitude" type="buffer" datatype="number" keep="false">lat</send>
-    <send id="gps_longitude" type="buffer" datatype="number" keep="false">lon</send>
-    <send id="gps_longitude" type="buffer" datatype="number" keep="false">z</send>
-  </connection>
-</network>
